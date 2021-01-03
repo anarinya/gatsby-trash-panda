@@ -9,9 +9,17 @@ import PageContainer from '../components/PageContainer';
 const FoodItemPageStyles = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
+
+  h2 {
+    margin: 2rem 0 0.8rem;
+    color: var(--white);
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    background-color: var(--darkPurple);
+  }
 
   .gatsby-image-wrapper {
     width: 100%;
@@ -24,43 +32,33 @@ const FoodItemPageStyles = styled.div`
   .bio {
     line-height: 1.8rem;
   }
-
-  .content {
-    align-self: flex-start;
-    margin-top: 2rem;
-  }
-
-  .author-name {
-    display: inline-block;
-    position: relative;
-    left: 35px;
-    top: 110px;
-    background-color: var(--red);
-    color: var(--white);
-    padding: 0.5rem;
-    margin: 0;
-    z-index: 2;
-    box-shadow: 1px 1px 6px var(--black);
-  }
 `;
 
 const FoodReviewListStyles = styled.ul`
   list-style-type: none;
-  padding: 0;
+  margin: 0;
 
   .review-detail {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: flex-start;
     margin: 2rem 0;
   }
 
+  .review-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
   .gatsby-image-wrapper {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+    margin: 0 1rem 1rem 0;
   }
 
   .review-content {
-    margin-left: 2rem;
     line-height: 1.5rem;
   }
 `;
@@ -72,21 +70,30 @@ const FoodItemPage = ({ data: { foodSource, reviews } }) => (
       <FoodItemPageStyles>
         <Img fluid={foodSource.photo.asset.fluid} alt="food source" />
         <div className="content">
-          <h1>Description</h1>
+          <div>
+            <h2>Description</h2>
+          </div>
           <span className="bio">{foodSource.description}</span>
         </div>
         <div className="content">
-          <h1>Reviews</h1>
+          <h2>Reviews</h2>
           <FoodReviewListStyles>
             {reviews.nodes.map((review) => (
               <li key={review.id}>
                 <div className="review-detail">
-                  <span className="img-container">
-                    <Img fluid={review.author.photo.asset.fluid} alt="author" />
-                  </span>
-                  <span className="review-content">
+                  <div className="review-header">
+                    <span className="img-container">
+                      <Img
+                        fluid={review.author.photo.asset.fluid}
+                        alt="author"
+                      />
+                    </span>
                     <h3>{review.title}</h3>
-                    {review.content} - <b>{review.author.name}</b>
+                  </div>
+                  <span className="review-content">
+                    {review.content}
+                    <br />
+                    <b>- {review.author.name}</b>
                   </span>
                 </div>
               </li>

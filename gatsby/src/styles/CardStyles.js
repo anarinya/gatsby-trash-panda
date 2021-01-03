@@ -11,7 +11,7 @@ export const CardStyles = styled.div`
   width: 90%;
   max-width: 800px;
   background-color: var(--white);
-  margin: 2rem 0;
+  margin: 0 0 2rem;
   padding: 0 2rem;
   border-radius: 4px;
 

@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import SectionHeader from '../components/SectionHeader';
 import { CardListStyles, CardStyles } from '../styles/CardStyles';
 
-const FoodSourcesPage = ({ data, pageContext }) => {
+const FoodSourcesPage = ({ data }) => {
   const foodSources = data.foodSources.nodes;
   return (
     <>
@@ -15,8 +15,8 @@ const FoodSourcesPage = ({ data, pageContext }) => {
           <CardStyles key={foodSource.id}>
             <Link to={`/food/${foodSource.slug.current}`}>
               <h2 className="food-title">{foodSource.name}</h2>
-            <Img fluid={foodSource.photo.asset.fluid} />
-            <h3 className="food-desc">{foodSource.description}</h3>
+              <Img fluid={foodSource.photo.asset.fluid} />
+              <h3 className="food-desc">{foodSource.description}</h3>
             </Link>
           </CardStyles>
         ))}

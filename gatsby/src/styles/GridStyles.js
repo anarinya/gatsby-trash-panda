@@ -1,28 +1,29 @@
 import styled from 'styled-components';
 
+export const GridContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+`;
+
 export const GourmandGridStyles = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
-  align-content: center;
-  margin: 0;
+  align-content: flex-start;
 `;
 
 export const GourmandGridItemStyles = styled.div`
+  width: 300px;
+  display: block;
   max-width: 300px;
   border-radius: 4px;
   margin: 0 2rem 2rem 2rem;
 
-  &:last-child {
-    margin-right: 0;
-  }
-
   .gatsby-image-wrapper {
-    height: 300px;
-    width: 350px;
     border-radius: 4px;
+    max-width: 300px;
+    width: 300px;
     box-shadow: 2px 2px 4px var(--darkPurple);
   }
 

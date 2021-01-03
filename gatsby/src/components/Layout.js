@@ -1,8 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
-import PageContainer from './PageContainer';
 import 'normalize.css';
 import GlobalStyles from '../styles/GlobalStyles';
 

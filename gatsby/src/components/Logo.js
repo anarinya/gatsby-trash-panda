@@ -4,12 +4,14 @@ import styled from 'styled-components';
 const LogoStyles = styled.div`
   color: var(--white);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   h1 {
     margin: 0;
-    display: inline;
-    margin-right: 0.5rem;
-    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-size: 4rem;
     color: var(--white);
     text-shadow: 1px 1px var(--darkPurple);
   }
@@ -18,13 +20,15 @@ const LogoStyles = styled.div`
     margin: 0;
     max-width: 300px;
     text-shadow: 1px 1px var(--darkPurple);
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 1rem;
   }
 `;
 
 const Logo = ({ title = '' }) => (
   <LogoStyles>
     <h1>ʕ·͡ᴥ·ʔ﻿</h1>
-    <h4 className="title">{title}</h4>
+    <h3 className="title">{title}</h3>
   </LogoStyles>
 );
 

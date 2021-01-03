@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 const IntroStyles = styled.div`
-  max-width: 1200px;
+  max-width: 1100px;
   color: var(--white);
   display: flex;
   flex-direction: row;
@@ -18,7 +18,8 @@ const IntroStyles = styled.div`
   text-shadow: 6px 6px 6px var(--darkPurple);
 
   .gatsby-image-wrapper {
-    width: 90%;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .burger-img {
@@ -37,7 +38,7 @@ const Intro = () => {
     query {
       fileName: file(relativePath: { eq: "burger.png" }) {
         childImageSharp {
-          fluid(maxWidth: 830) {
+          fluid(maxWidth: 600) {
             ...GatsbyImageSharpFluid
           }
         }

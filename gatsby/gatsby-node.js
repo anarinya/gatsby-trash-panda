@@ -1,5 +1,4 @@
 const path = require('path');
-const fetch = require('isomorphic-fetch');
 
 const gourmandTemplate = path.resolve('./src/templates/Gourmand.js');
 const foodTemplate = path.resolve('./src/templates/FoodItem.js');
