@@ -28,7 +28,7 @@ const LogoStyles = styled.div`
 const Logo = ({ title = '' }) => (
   <LogoStyles>
     <h1>ʕ·͡ᴥ·ʔ﻿</h1>
-    <h3 className="title">{title}</h3>
+    <h2 className="title">{title}</h2>
   </LogoStyles>
 );
 

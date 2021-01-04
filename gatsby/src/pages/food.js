@@ -2,6 +2,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
+import SEO from '../components/SEO';
 import SectionHeader from '../components/SectionHeader';
 import { CardListStyles, CardStyles } from '../styles/CardStyles';
 
@@ -9,6 +10,7 @@ const FoodSourcesPage = ({ data }) => {
   const foodSources = data.foodSources.nodes;
   return (
     <>
+      <SEO title="Food" />
       <SectionHeader title="Food Sources We've Found" />
       <CardListStyles>
         {foodSources.map((foodSource) => (

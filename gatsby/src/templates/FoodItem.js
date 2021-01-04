@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Img from 'gatsby-image';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 import SectionHeader from '../components/SectionHeader';
 import PageContainer from '../components/PageContainer';
 
@@ -65,6 +66,7 @@ const FoodReviewListStyles = styled.ul`
 
 const FoodItemPage = ({ data: { foodSource, reviews } }) => (
   <div>
+    <SEO title={foodSource.name} />
     <SectionHeader title={foodSource.name} subtitle={foodSource.headline} />
     <PageContainer>
       <FoodItemPageStyles>

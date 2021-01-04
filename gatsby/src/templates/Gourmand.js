@@ -3,6 +3,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 import SectionHeader from '../components/SectionHeader';
 import PageContainer from '../components/PageContainer';
 
@@ -32,6 +33,7 @@ const GourmandPageStyles = styled.div`
 
 const GourmandPage = ({ data: { gourmand } }) => (
   <div>
+    <SEO title={gourmand.name} />
     <SectionHeader title={gourmand.name} subtitle={gourmand.occupation} />
     <PageContainer>
       <GourmandPageStyles>

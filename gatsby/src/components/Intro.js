@@ -1,31 +1,28 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 const IntroStyles = styled.div`
-  max-width: 1100px;
+  margin-top: 2rem;
   color: var(--white);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  padding: 2rem;
   text-align: center;
   text-shadow: 6px 6px 6px var(--darkPurple);
 
-  .gatsby-image-wrapper {
-    width: 100%;
-    margin: 0 auto;
+  .burger-img {
+    display: block;
+    width: 250px;
+    height: 250px;
   }
 
-  .burger-img {
-    width: 500px;
-    min-width: 300px;
-    margin: 0 auto;
+  .gatsby-image-wrapper {
+    width: 250px;
+    height: 250px;
   }
 
   .text {
@@ -36,12 +33,8 @@ const IntroStyles = styled.div`
 const Intro = () => {
   const data = useStaticQuery(graphql`
     query {
-      fileName: file(relativePath: { eq: "burger.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 600) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+      fileName: file(relativePath: { eq: "trash.svg" }) {
+        publicURL
       }
     }
   `);
@@ -49,7 +42,7 @@ const Intro = () => {
   return (
     <IntroStyles>
       <div className="burger-img">
-        <Img fluid={data.fileName?.childImageSharp?.fluid} alt="burger" />
+        <img src={data.fileName?.publicURL} alt="food" />
       </div>
       <div className="text">
         <h1>A curated list of the finest in second-hand outdoor dining</h1>

@@ -2,6 +2,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
+import SEO from '../components/SEO';
 import SectionHeader from '../components/SectionHeader';
 import {
   GridContainer,
@@ -13,6 +14,7 @@ const GourmandPage = ({ data }) => {
   const gourmands = data.gourmands.nodes;
   return (
     <>
+      <SEO title="Gourmands" />
       <SectionHeader title="Gourmands" />
       <GridContainer>
         <GourmandGridStyles>

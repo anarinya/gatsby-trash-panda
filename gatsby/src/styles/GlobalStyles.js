@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
     background-attachment: fixed;
     color: var(--white);
     font-size: 16px;
+    font-display: swap;
   }
 
   html, body {
