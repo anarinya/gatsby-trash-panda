@@ -28,6 +28,11 @@ const IntroStyles = styled.div`
   .text {
     max-width: 500px;
   }
+
+  h1,
+  h2 {
+    padding: 0 1rem;
+  }
 `;
 
 const Intro = () => {
