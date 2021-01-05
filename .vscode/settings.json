@@ -5,7 +5,7 @@
     "titleBar.activeBackground": "#53BDDE",
     "titleBar.inactiveBackground": "#537FDE"
   },
-  // These are all my auto-save configs
+  // These are all my auto-saave configs
   "editor.formatOnSave": true,
   // turn it off for JS and JSX, we will do this via eslint
   "[javascript]": {

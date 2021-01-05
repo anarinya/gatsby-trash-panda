@@ -15,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
+    background-color: var(--purple);
     background-image: url(${bg});
     background-size: 450px;
     background-attachment: fixed;
